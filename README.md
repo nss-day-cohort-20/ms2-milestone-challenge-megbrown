@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Create the working directory for the quiz first.
+1. Create the working directory for the challenge first.
 
     ```bash
     mkdir -p ~/workspace/challenges/spa && cd $_
