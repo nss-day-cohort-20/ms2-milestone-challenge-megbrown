@@ -2,9 +2,9 @@ let carContainer = document.getElementById("carContainer");
 let inputField = document.getElementById("input");
 
 function makeCar(carInventoryArr) {
-	for (counter = 0; counter < 3; counter++) {
+	for (counter = 0; counter < carInventoryArr.length; counter++) {
 		carContainer.innerHTML +=
-			`<div class="col-sm-4">
+			`<div class="col-sm-4 card-border">
 				<div class="col-sm-12 card">
 				 	<h2>${carInventoryArr[counter].make}</h2>
 				 	<h4>${carInventoryArr[counter].model}</h4>
