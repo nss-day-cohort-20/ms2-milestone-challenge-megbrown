@@ -7,7 +7,6 @@ var CarLot = ( function(globalScopeCarLot){
     var loader = new XMLHttpRequest();
     loader.addEventListener("load", function() {
       carInventoryArr = JSON.parse(this.responseText).cars;
-      console.log(carInventoryArr);
       callback(carInventoryArr);
     });
     loader.open("GET", "../inventory.json");

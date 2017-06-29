@@ -2,3 +2,7 @@
 	border: 2px solid #000;
 	height: 30em;
 }
+.newClass {
+	border: 5px solid #000;
+	background-color: #f7f7f7;
+}
