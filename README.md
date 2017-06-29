@@ -1,28 +1,5 @@
 # Single Page Applications Milestone Challenge
 
-## Setup
-
-1. Create the working directory for the challenge first.
-
-    ```bash
-    mkdir -p ~/workspace/challenges/spa && cd $_
-    ```
-
-1. Clone this repository and `cd` into the directory it creates.
-1. Now run the following commands.
-
-    ```bash
-    git checkout -b challenge
-    touch index.html
-    mkdir css && touch css/styles.css
-    mkdir javascripts && touch javascripts/main.js
-    touch inventory.json
-    ```
-
-You are now ready to work in the `challenge` branch.
-
-When your work in complete, push up the branch (`git push origin challenge`) and submit the pull request on Github.
-
 ## Instructions
 
 You operate a used car lot, and need to have an application where you can update the description and availability of each car in your inventory. You are going to using the Bootstrap grid to lay out your HTML structure.
@@ -70,7 +47,7 @@ Remember to design your system first. Modularity. Single Responsiblity. Once you
 var CarLot = (function (globalScopeCarLot) {
 
   // Define a private scope variable to store cars
-  let _car_inventory = [];  
+  let _car_inventory = [];
 
   // Start building the Object that will be attached
   // to the CarLot.Inventory namespace
