@@ -1,9 +1,13 @@
 let carContainer = document.getElementById("carContainer");
 let inputField = document.getElementById("input");
 
-function makeCar(carInventoryArr) {
+function carToDom(carInventoryArr) {
+	let domString = "";
 	for (counter = 0; counter < carInventoryArr.length; counter++) {
-		carContainer.innerHTML +=
+		if (counter % 3 === 0) {
+			domString += `<div class="row">`;
+		}
+		domString +=
 			`<div class="col-sm-4 card-border">
 				<div class="col-sm-12 card">
 				 	<h2>${carInventoryArr[counter].make}</h2>
@@ -12,12 +16,17 @@ function makeCar(carInventoryArr) {
 				 	<h3>${carInventoryArr[counter].price}</h3>
 					<p>${carInventoryArr[counter].description}</p>
 				</div>
-			</div>`
+			</div>`;
+		if (counter % 3 === 2) {
+			domString += `</div>`;
+			console.log(counter % 3)
+		}
 	}
-	addClass();
+	carContainer.innerHTML = domString;
+	addNewClass();
 }
 
-function addClass() {
+function addNewClass() {
 	let carEl = document.querySelectorAll(".card");
 	for (i=0; i<carEl.length; i++) {
 		carEl[i].addEventListener("click", function(event) {
@@ -26,12 +35,12 @@ function addClass() {
 			}
 			event.currentTarget.classList.add("newClass");
 			inputField.focus();
-			keyPress();
+			hearInputField();
 		})
 	}
 }
 
-function keyPress() {
+function hearInputField() {
 	inputField.addEventListener("keyup", function() {
 		if (event.key === "Enter") {
 			inputField.value = "";
@@ -46,4 +55,4 @@ function replaceInfo() {
 	newClassEl.querySelector("p").innerHTML = inputField.value;
 }
 
-CarLot.loadInventory(makeCar);
+CarLot.loadInventory(carToDom);
